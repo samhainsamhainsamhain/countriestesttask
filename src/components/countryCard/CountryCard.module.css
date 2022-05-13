@@ -1,0 +1,21 @@
+.countryContainer {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(230, 230, 230);
+}
+
+.flag {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+
+.countryInfo {
+  display: flex;
+  flex-direction: column;
+}

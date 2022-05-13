@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { countriesFetch } from "../countries/countriesFetch";
-import { Country } from "../countries/countriesInterfaces";
+import { countriesFetch } from "../../countries/countriesFetch";
+import { Country } from "../../countries/countriesInterfaces";
 
 import classes from "./SearchBox.module.css";
 
@@ -18,9 +18,7 @@ export default function SearchBox(props: SearchBoxProps) {
 
   async function getSearchResult(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
-    const queryResult = (await countriesFetch(
-      `name/${query}`
-    )) as Country[];
+    const queryResult = (await countriesFetch(`name/${query}`)) as Country[];
     props.onSearchResultReceived(queryResult);
   }
 
@@ -28,11 +26,11 @@ export default function SearchBox(props: SearchBoxProps) {
     <header className={classes.searchBox}>
       <form className={classes.searchForm} onSubmit={getSearchResult}>
         <input
-          placeholder="Search for a character"
+          placeholder="Enter Country Name"
           onChange={queryChangeHandler}
           value={query}
         />
-        <button type="submit">abcd</button>
+        <button type="submit">Search Country</button>
       </form>
     </header>
   );

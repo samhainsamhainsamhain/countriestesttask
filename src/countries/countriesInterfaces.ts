@@ -8,6 +8,6 @@ export interface Country {
     png: string;
     svg: string;
   };
-  languages: [{ [key: string]: string }];
-  borders: string[];
+  languages: { [key: string]: string };
+  borders: string[] | undefined;
 }
